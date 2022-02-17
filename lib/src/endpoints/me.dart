@@ -83,6 +83,11 @@ class Me extends EndpointPaging {
     return _getPages('$_path/shows', (json) => Show.fromJson(json['show']));
   }
 
+  /// Get a list of albums saved in the current Spotify user’s library.
+  Pages<Album> savedAlbums() {
+    return _getPages('$_path/albums', (json) => Album.fromJson(json['album']));
+  }
+
   Iterable<Device> _parseDeviceJson(String jsonString) {
     var map = json.decode(jsonString);
 
