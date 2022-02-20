@@ -510,6 +510,16 @@ TrackSaved _$TrackSavedFromJson(Map<String, dynamic> json) {
         : Track.fromJson(json['track'] as Map<String, dynamic>);
 }
 
+AlbumSaved _$AlbumSavedFromJson(Map<String, dynamic> json) {
+  return AlbumSaved()
+    ..addedAt = json['added_at'] == null
+        ? null
+        : DateTime.parse(json['added_at'] as String)
+    ..album = json['album'] == null
+        ? null
+        : Album.fromJson(json['album'] as Map<String, dynamic>);
+}
+
 TrackLink _$TrackLinkFromJson(Map<String, dynamic> json) {
   return TrackLink()
     ..externalUrls = (json['external_urls'] as Map<String, dynamic>?)?.map(
