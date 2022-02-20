@@ -32,6 +32,22 @@ class Album extends AlbumSimple {
   int? popularity;
 }
 
+/// An album saved in a Spotify user’s “Your Music” library
+@JsonSerializable(createToJson: false)
+class AlbumSaved extends Object {
+  AlbumSaved();
+
+  factory AlbumSaved.fromJson(Map<String, dynamic> json) =>
+      _$AlbumSavedFromJson(json);
+
+  /// The date and time the track was saved.
+  @JsonKey(name: 'added_at')
+  DateTime? addedAt;
+
+  /// Information about the track.
+  Album? album;
+}
+
 @JsonSerializable(createToJson: false)
 class AlbumSimple extends Object {
   AlbumSimple();

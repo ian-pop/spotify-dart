@@ -15,6 +15,10 @@ abstract class SpotifyApiBase {
   Artists get artists => _artists;
   late Albums _albums;
   Albums get albums => _albums;
+//Ian added AlbumsMe
+  late AlbumsMe _albumsme;
+  AlbumsMe get AlbumSaved => _albumsme;
+
   late Tracks _tracks;
   Tracks get tracks => _tracks;
   late Playlists _playlists;
